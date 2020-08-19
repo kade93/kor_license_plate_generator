@@ -48,8 +48,8 @@ class ImageGenerator:
             img_path = os.path.join(file_path, file)
             img = cv2.imread(img_path)
             img_r = cv2.bitwise_not(img)
-            self.Number.append(img_r)
-            self.number_list.append(file[0:-4])
+            self.Number_r.append(img_r)
+            self.number_list_r.append(file[0:-4])
 
         
         # loading Char
@@ -78,13 +78,13 @@ class ImageGenerator:
         # loading reverse Region
         file_path = "./region_r/"
         file_list = os.listdir(file_path)
-        self.Resion_y = list()
-        self.resion_list_y = list()
+        self.Resion_r = list()
+        self.resion_list_r = list()
         for file in file_list:
             img_path = os.path.join(file_path, file)
             img = cv2.imread(img_path)
-            self.Resion_y.append(img)
-            self.resion_list_y.append(file[0:-4])
+            self.Resion_r.append(img)
+            self.resion_list_r.append(file[0:-4])
        
         # loading Resion
         file_path = "./region_g/"
@@ -411,10 +411,10 @@ class ImageGenerator:
                 cv2.destroyAllWindows()
     #초록색 배경 -> 까만색 배경에 흰색 숫자, 지역번호 포함
     def Type_6(self, num, save=False):
-        number1 = [cv2.resize(number, (44, 60)) for number in self.Number_y]
-        number2 = [cv2.resize(number, (64, 90)) for number in self.Number_y]
-        resion = [cv2.resize(resion, (88, 60)) for resion in self.Resion_y]
-        char = [cv2.resize(char1, (64, 62)) for char1 in self.Char1_y]
+        number1 = [cv2.resize(number, (44, 60)) for number in self.Number_r]
+        number2 = [cv2.resize(number, (64, 90)) for number in self.Number_r]
+        resion = [cv2.resize(resion, (88, 60)) for resion in self.Resion_r]
+        char = [cv2.resize(char1, (64, 62)) for char1 in self.Char1_r]
 
         for i, Iter in enumerate(range(num)):
             Plate = cv2.resize(self.plate6, (336, 170))
@@ -477,14 +477,14 @@ class ImageGenerator:
                 cv2.destroyAllWindows()
 
 
-    def Type_4(self, num, save=False):
+    def Type_7(self, num, save=False):
         number1 = [cv2.resize(number, (44, 60)) for number in self.Number_g]
         number2 = [cv2.resize(number, (64, 90)) for number in self.Number_g]
         resion = [cv2.resize(resion, (88, 60)) for resion in self.Resion_g]
         char = [cv2.resize(char1, (64, 62)) for char1 in self.Char1_g]
 
         for i, Iter in enumerate(range(num)):
-            Plate = cv2.resize(self.plate3, (336, 170))
+            Plate = cv2.resize(self.plate7, (336, 170))
 
             label = str()
             # row -> y , col -> x
@@ -607,6 +607,7 @@ class ImageGenerator:
                 cv2.waitKey(0)
                 cv2.destroyAllWindows()
     
+    # 3자리 번호판 
     def Type_6(self, num, save=False):
         number = [cv2.resize(number, (56, 83)) for number in self.Number]
         char = [cv2.resize(char1, (60, 83)) for char1 in self.Char1]
