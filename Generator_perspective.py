@@ -809,7 +809,7 @@ A = ImageGenerator(img_dir)
 
 num_img = args.num
 Save = args.save
-'''
+
 A.Type_1(num_img, save=Save)
 print("Type 1 finish")
 A.Type_2(num_img, save=Save)
@@ -820,7 +820,6 @@ A.Type_4(num_img, save=Save)
 print("Type 4 finish")
 A.Type_5(num_img, save=Save)
 print("Type 5 finish")
-'''
 A.Type_6(num_img, save=Save)
 print("Type 6 finish")
 A.Type_7(num_img, save=Save)
