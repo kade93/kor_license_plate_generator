@@ -3,6 +3,8 @@
 기존의
  https://github.com/qjadud1994/Korean-license-plate-Generator/tree/e4c7386a6e5954bd9ffaf34abb102ac49f2bdf48 의 번호판 생성기를 참고하였습니다 
 
+* 2020.08.30 'HY헤드라인M' 글씨체, '하, 호' 글씨 추가
+
 * 2020.08.29 추가할 사항들
 
   * '하' 와 '호' 글자 생성 및 label로 적용될 수 있는 번호판 추가 예정.
